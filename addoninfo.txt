@@ -1,0 +1,12 @@
+"AddonInfo"
+
+{
+	maps			"cbh_part_1"
+	"IsPlayable"	"1"
+	"HeroGuidesSupported" "0"
+	"cbh_part_1"
+	{
+		"MaxPlayers"                    "1"
+	}
+
+}

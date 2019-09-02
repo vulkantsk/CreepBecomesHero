@@ -1,0 +1,347 @@
+// Dota Heroes File
+
+#base "abilities/abilities_part_1.txt"
+
+"DOTAAbilities"
+{
+
+	//=================================================================================================================
+	// Naga Siren: Ensnare
+	//=================================================================================================================
+	"ensnare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"naga_siren_ensnare"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_NagaSiren.Ensnare.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"1.5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"net_speed"					"750"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fake_ensnare_distance"		"900"	
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}	
+
+	"alpha_wolf_command_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"alpha_wolf_command_aura"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+		}
+	}
+	
+	"alpha_wolf_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5308"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_mult"					"200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+ 
+"kobold_bash"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             		"ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"  
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "satyr_hellcaller_shockwave"
+	"RequiredLevel"                 "1"
+	"LevelsBetweenUpgrades"         "3"
+	"MaxLevel"                      "7"
+  
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+    {
+        "particle"          "particles/neutral_fx/satyr_hellcaller.vpcf"
+    }
+ 
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "trigger_chance"          	"25"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "duration"             		"1"
+        }
+    }
+    "Modifiers"
+    {
+        "modifier_kobold_bash_passive"
+        {
+            "Passive"	"1"
+			"IsHidden"	"1"
+        
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"		"%trigger_chance"
+					"PseudoRandom"	"DOTA_PSEUDO_RANDOM_LYCAN_CRIT"
+
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"		"modifier_stunned"
+							"Target"			"TARGET"
+							"Duration"			"%duration"
+						}
+
+						"FireSound"
+						{
+							"EffectName"    "DOTA_Item.SkullBasher"
+							"Target"        "TARGET"
+						}
+					}
+				}		
+			}
+        }
+    }
+}
+	"health_dummy"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"techies_suicide"	
+
+		"Modifiers"
+		{
+			"modifier_health_dummy"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/health_dummy"
+						"Function"			"DummyDamage"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"		"1"
+
+				}			
+			}
+		}			
+	}	
+	"change_class_creep"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/creep"
+		"RequiredLevel"				"5"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"creep"
+			}			
+		}
+	}	
+	"change_class_creep_melee"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/creep_melee"
+		"RequiredLevel"				"10"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"creep_melee"
+			}			
+		}
+	}	
+	"change_class_creep_ranged"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/creep_ranged"
+		"RequiredLevel"				"10"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"creep_ranged"
+			}			
+		}
+	}	
+
+	"change_class_warrior"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/warrior"
+		"RequiredLevel"				"15"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"warrior"
+			}			
+		}
+	}	
+	"change_class_assassin"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/assassin"
+		"RequiredLevel"				"15"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"assassin"
+			}			
+		}
+	}	
+	"change_class_archer"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/archer"
+		"RequiredLevel"				"15"
+		"MaxLevel"					"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"archer"
+			}			
+		}
+	}	
+	"change_class_mage"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"classes/mage"
+		"RequiredLevel"				"15"
+		"MaxLevel"					"1"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/change_class.lua"
+				"Function"		"ChangeClass"
+				"class_name"			"mage"
+			}			
+		}
+	}	
+}

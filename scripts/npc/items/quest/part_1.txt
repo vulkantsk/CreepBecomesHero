@@ -1,0 +1,215 @@
+
+"DOTAAbilities"
+{
+	"item_quest_meat"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/gameplay/meat/meat.vmdl" 
+		"AbilityTextureName"			"quest/part_1/meat"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"1"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemInitialCharges"            "1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+	} 
+	"item_quest_gold"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/gold_bag.vmdl" 
+		"AbilityTextureName"			"quest/part_1/gold"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"1"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemInitialCharges"            "1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+	} 
+	"item_quest_herbs"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+//		"Model"							"models/heroes/enchantress/enchantress_flower.vmdl" 
+		"Model"							"maps/journey_assets/props/foliage/grass_river_01.vmdl" 
+		"AbilityTextureName"			"quest/part_1/herbs"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"1"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemInitialCharges"            "1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+	} 
+	"item_quest_rusty_kirk_part_1"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/rusty_kirk_part_1"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"1"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+	}
+	"item_quest_rusty_kirk_part_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/rusty_kirk_part_2"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"1"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+	}
+	"item_recipe_quest_rusty_kirk"
+	{
+		"BaseClass"						"item_datadriven"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		"ItemCost"						"0"	
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_quest_rusty_kirk"
+		"ItemRequirements"
+		{
+			"01"						"item_quest_rusty_kirk_part_1;item_quest_rusty_kirk_part_2"
+		}
+	}
+	"item_quest_rusty_kirk"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/rusty_kirk"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		
+		"Modifiers"
+		{
+			"modifier_quest_rusty_kirk"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"1"
+				}			
+			}
+		}
+	} 
+	"item_quest_helm"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/helm"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		
+		"Modifiers"
+		{
+			"modifier_quest_helm"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"0"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"						"5"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"1"
+				}			
+			}
+		}
+	} 
+	"item_quest_armor"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/armor"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		
+		"Modifiers"
+		{
+			"modifier_quest_armor"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"0"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"						"10"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"1"
+				}			
+			}
+		}
+	} 
+	"item_quest_boots"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"quest/part_1/boots"
+		"Model"							"models/props_gameplay/boots_of_speed.vmdl"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemSellable"                  "1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDisassembleRule" 			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		
+		"Modifiers"
+		{
+			"modifier_quest_boots"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"				"25"
+				}			
+			}
+		}
+	} 
+	
+}
