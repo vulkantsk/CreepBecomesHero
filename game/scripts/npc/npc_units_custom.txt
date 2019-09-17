@@ -1,0 +1,192 @@
+"DOTAUnits"
+{
+	"npc_cbh_microrofler"	
+	{
+		"Model"						"models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".9"
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.6"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf"
+		"ProjectileSpeed"			"1500"
+
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		"BountyXP"					"24"
+		"BountyGoldMin"				"21"
+		"BountyGoldMax"				"29"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+
+		"StatusHealth"				"75"
+		"StatusHealthRegen"			"0.5"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+		
+		"VisionDaytimeRange"		"400"
+		"VisionNighttimeRange"		"400"
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	"npc_cbh_zlodey"	
+	{
+		"Model"						"models/items/invoker/forge_spirit/infernus/infernus.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".9"
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.6"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf"
+		"ProjectileSpeed"			"1500"
+
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		"BountyXP"					"24"
+		"BountyGoldMin"				"21"
+		"BountyGoldMax"				"29"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+
+		"StatusHealth"				"75"
+		"StatusHealthRegen"			"0.5"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+		
+		"VisionDaytimeRange"		"400"
+		"VisionNighttimeRange"		"400"
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	"npc_cbh_character_soul"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/wisp/wisp.vmdl"
+		"SoundSet"					"Hero_Wisp"
+		"IdleSoundLoop"				"Hero_Wisp.IdleLoop"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"44"
+		"AttackDamageMax"			"55"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.150000"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileModel"			"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
+		"ProjectileSpeed"			"1200"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"280"
+		"MovementTurnRate"			"0.700000"
+		"StatusHealth"				"75"
+		"StatusHealthRegen"			"0.5"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+
+		"LevelToUpgrade"			"2"
+		"Upgrades"
+		{
+			"0"						"npc_cbh_character_strelok"
+			"1"						"npc_cbh_character_diryaviy"
+		}
+	}
+
+	"npc_cbh_character_strelok"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/sniper/sniper.vmdl"
+		"SoundSet"					"Hero_Sniper"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.150000"
+		"AttackAcquisitionRange"	"950"
+		"AttackRange"				"550"
+		"ProjectileModel"			"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+		"ProjectileSpeed"			"3000"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"280"
+		"MovementTurnRate"			"0.700000"
+		"StatusHealth"				"1080"
+		"StatusHealthRegen"			"0.5"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+
+	"npc_cbh_character_diryaviy"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/kunkka/kunkka.vmdl"
+		"SoundSet"					"Hero_Kunkka"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"
+		"AttackDamageMax"			"5"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"280"
+		"MovementTurnRate"			"0.700000"
+		"StatusHealth"				"50"
+		"StatusHealthRegen"			"0.5"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

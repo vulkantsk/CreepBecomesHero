@@ -1,0 +1,8 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"ability_base"
+	{
+		"ItemCastOnPickup"		"1"
+	}
+}

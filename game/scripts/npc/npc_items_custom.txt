@@ -1,0 +1,19 @@
+"DOTAAbilities"
+{
+	"item_cbh_axe_attacks"
+	{
+		"BaseClass"				"item_datadriven"
+		"Model"					"models/props_gameplay/quelling_blade.vmdl"
+		"AbilityTextureName"	"item_ogre_axe"
+
+		"Randoms"
+		{
+			"damage"
+			{
+				"type"			"int"
+				"min"			"20"
+				"max"			"100"
+			}
+		}
+	}
+}

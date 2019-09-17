@@ -1,0 +1,45 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/hud.css" />
+		<include src="file://{resources}/styles/custom_game/character_upgrade.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/utils.js" />
+		<include src="file://{resources}/scripts/custom_game/character_upgrade.js" />
+		<include src="file://{resources}/scripts/custom_game/hud.js" />
+	</scripts>
+
+	<Panel class="Hud" hittest="false">
+		<Panel id="Boxes" class="Hud" hittest="false">
+			<Panel id="CharacterUpgradeBox">
+				<Panel id="CharacterUpgradeHeader" draggable="true">
+					<Label id="CharacterUpgradeHeaderText" text="Character Upgrade" />
+					<Button id="CloseCharacterUpgradeButton" onactivate="ToggleVisibilityBox( characterUpgradeBar )" />
+				</Panel>
+				<Panel id="CharacterUpgradesContainer" />
+			</Panel>
+		</Panel>
+
+		<Panel id="Hud" class="Hud" hittest="false">
+			<Panel id="Top" hittest="false">
+				<Panel id="LevelProgress">
+					<Panel id="LevelContainer">
+						<Label id="Level" text="0" />
+					</Panel>
+					<Panel id="XPBar">
+						<Panel id="Progress" />
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<Panel id="Bottom" hittest="false">
+				<Panel id="ToggleButtons">
+					<Button id="CharacterUpgradeButton" class="ToggleButton" onactivate="ToggleVisibilityBox( characterUpgradeBar )">
+						<Label class="ToggleButtonText" text="Upgrade" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
